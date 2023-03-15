@@ -146,6 +146,10 @@ For example, in the first pass, I could construct a tree of movies ordered lexic
 When I wanted to find all movies with a prefix, I would search for the first node that has the desired prefix, 
 so that all of its children also have that prefix, thus lessening search times. 
 
+Overall, I chose this implementation for its simplicity, 
+but I could significantly improve the time complexity. I believe my space complexity is 
+adequate given the constraints of the problem
+
 */
 
 
