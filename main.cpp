@@ -103,6 +103,56 @@ int main(int argc, char** argv){
 }
 
 /* Add your run time analysis for part 3 of the assignment here as commented block*/
+/*
+for loop runs m times (for every prefix)
+    for loop runs n times (for every movie)
+        n comparisons
+            k priority queue insertions -- insertion time is O(logk)
+    O(n)
+
+    concatenate to highestRatedMovies
+    while loop runs k times (for each movie with the prefix)
+        priority queue removal - worst case is O(logk)
+    O(k)
+
+worst-case time complexity is O(m)*O(n+k)
+=>O(mn)
+
+space-complexity:
+
+creating the priority queue is the dominant operation: 
+has space complexity O(k)
+destroys priority queue at the end of each prefix loop
+
+also concatenating m strings for highestRatedMovies string O(k)
+
+
+worst-case space-complexity is O(k+m)
+
+Reflection: 
+I designed my algorithm mainly to optimize space complexity
+without much consideration for time complexity
+
+I used a priority queue to store the movies that had the desired prefix,
+Even though this method has only O(k) space complexity, I needed the custom sorting
+capability of a priority queue to change the order the movies are printed out,
+as the movies set data structure stores the movies in alphabetical order while
+the lab called for the movies with prefixes to be printed out in rating order.
+
+While using this priority queue method, if I had wanted to optimize my time complexity to be less than
+O(mn), I could perhaps use a processing function while iterating through movies
+to make subsequent prefix operations faster. There are many possible methods.
+For example, in the first pass, I could construct a tree of movies ordered lexicographically,
+When I wanted to find all movies with a prefix, I would search for the first node that has the desired prefix, 
+so that all of its children also have that prefix, thus lessening search times. 
+
+*/
+
+
+
+
+
+
 
 bool parseLine(string &line, string &movieName, double &movieRating) {
     if (line.length() <= 0) return false;
