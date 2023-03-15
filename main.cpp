@@ -89,7 +89,7 @@ int main(int argc, char** argv){
             highestRatedMovies << "Best movie with prefix " << argv[i] << " is: " << prefixList.top().name << " with rating " << std::fixed << std::setprecision(1) << prefixList.top().rating << endl;
         
             while (!prefixList.empty()) {
-                cout << prefixList.top().name << ", " << std::fixed << std::setprecision(1) << prefixList.top().rating << endl;
+                cout << prefixList.top().name << ": " << std::fixed << std::setprecision(1) << prefixList.top().rating << endl;
                 prefixList.pop();
             }
         }
