@@ -56,7 +56,7 @@ int main(int argc, char** argv){
 
   if (argc == 2){
     for (auto it = movies.begin(); it != movies.end(); ++it) {
-        cout << (*it).name << ", " << (*it).rating << endl;
+        cout << (*it).name << ", " << std::fixed << std::setprecision(1) << (*it).rating << endl;
     }
     return 0;
   }
